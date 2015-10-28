@@ -1,0 +1,69 @@
+<sly data-sly-use.article="uk.co.telegraph.core.commons.article.ArticleMetadata" data-sly-unwrap></sly>
+<footer>
+	<div data-sly-unwrap="${!authorMode}" data-sly-resource="${ @ path=articleAuthorNodePath, resourceType='telegraph/core/commons/components/authorPath'}" ></div>
+</footer>
+<article  itemprop="${ article.isReview ? 'reviewBody' : 'articleBody'}" data-mobile-insert-adslot>
+	<div data-sly-unwrap="${!authorMode}" data-sly-resource="${ @ path=articleParagraphNodePath, resourceType='telegraph/core/commons/components/paragraph'}" ></div>
+</article>
+<script data-sly-test="${!authorMode}">
+	tmg.appendAdSlot = function(options){
+		if (location.search.match("forceadslotd") && options.insertBreakpoints.indexOf(tmg.viewport.mediaQuery) > -1 && document.querySelectorAll && document.querySelectorAll(options.selector).length > options.triggerLength - 1 ){
+			var adSlot = document.createElement("DIV"),
+					triggerSection = document.querySelectorAll(options.selector)[ options.triggerLength - 1 ];
+			adSlot.setAttribute("data-options", options.adDataOptions);
+			adSlot.setAttribute("data-advert--ad-type", options.adType);
+			adSlot.setAttribute("class", options.adClass);
+			adSlot.innerHTML = "<div class=\"component-content\"></div>";
+			if (triggerSection.nextSibling){
+				triggerSection.parentNode.insertBefore(adSlot, triggerSection.nextSibling);
+			} else {
+				triggerSection.parentNode.appendChild(adSlot);
+			}
+		}
+	}
+
+	tmg.appendAdSlot({
+		adDataOptions: "{ 'adLocation': 'body', 'adType': 'mpu', 'breakpoints': 'xxs,xs,sm' }",
+		adType: "mpu",
+		adClass: "advert component js-advert",
+		insertBreakpoints: ["xxs","xs","sm"],
+		selector: "article[data-mobile-insert-adslot]>div.section",
+		triggerLength: 5
+	});
+// don't use libraries
+tmg.insertAdSlot = function(options){
+	var sections = [].slice.call( document.querySelectorAll(options.sectionSelector) ),
+		i = 0,
+		count = 0,
+		triggerSection;
+
+	for (;i < sections.length , count < options.triggerLength; i++){
+		triggerSection = sections[i];
+		count = count + triggerSection.querySelectorAll(options.triggerSelectors).length ;
+	}
+
+	if (count > options.triggerLength - 1 ){
+		var adSlot = document.createElement("DIV");
+
+		adSlot.setAttribute("data-options", options.adDataOptions);
+		adSlot.setAttribute("data-advert--ad-type", options.adType);
+		adSlot.setAttribute("class", options.adClass);
+		adSlot.innerHTML = "<div class=\"component-content\"></div>";
+		if (triggerSection.nextSibling){
+			triggerSection.parentNode.insertBefore(adSlot, triggerSection.nextSibling);
+		} else {
+			triggerSection.parentNode.appendChild(adSlot);
+		}
+	}
+}
+// must be called BEFORE ad script
+tmg.insertAdSlot({
+	adDataOptions: "{ 'adLocation': 'body', 'adType': 'mpu', 'breakpoints': 'xxs,xs,sm' }",
+	adType: "mpu",
+	adClass: "advert component js-advert",
+	insertBreakpoints: ["xxs","xs","sm"],
+	sectionSelector: "article",
+	triggerSelectors: "p,ul,ol,blockquote,img,.external-video,.tweet-timeline,.quote,.article-body-table",
+	triggerLength: 5
+});
+</script>

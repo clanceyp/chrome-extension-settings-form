@@ -1,0 +1,30 @@
+{
+	"name": "Setting Form"
+	,"short_name": "set-f"
+	,"version": "0.0.1"
+	,"manifest_version": 2
+	,"description": "Basic setting form boilter plate"
+	,"icons": {
+		"32": "lib/i/cog-01.svg"
+		,"48": "lib/i/cog-01.svg"
+		,"128": "lib/i/cog-01.svg"
+	}
+	,"background":{
+		"scripts": [
+			"lib/js/settings-manifest.js"
+			,"lib/js/vendor/underscore.js"
+			,"lib/js/vendor/zepto.js"
+			,"lib/js/vendor/can.js"
+			,"lib/js/background.js"
+		]
+	}
+	,"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+	,"options_page": "options.html"
+	,"permissions": [
+		"tabs"
+		,"http://*/*"
+		,"https://*/*"
+		,"background"
+		,"notifications"
+	]
+}

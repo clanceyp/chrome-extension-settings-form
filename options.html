@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html id="ctl00_HtmlElement" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<script src="lib/js/vendor/zepto.js"></script>
+	<script src="lib/js/vendor/knockout.js"></script>
+	<script src="lib/js/vendor/knockout.reactor.js"></script>
+	<script src="lib/js/vendor/underscore.js"></script>
+	<script src="lib/js/settings-manifest.js"></script>
+	<script src="lib/js/options.js"></script>
+	<link rel="stylesheet" href="lib/css/help.css"/>
+
+	<title>Extension options</title>
+
+	<style>
+		.settings__form-label {
+			display: block;
+			padding-bottom: 4px;
+		}
+		.settings__form-label--checkbox {
+			display: inline-block;
+			padding-left: 4px;
+		}
+		.settings__form-label--range:after {
+			content: " " attr(data-value) attr(data-suffix)
+		}
+		.settings__form-row {
+			border-bottom: 1px dashed #ccc;
+			margin-bottom: 8px;
+			padding-bottom: 8px;
+		}
+
+		.settings {
+			margin-left: 200px;
+		}
+		.settings__navigation {
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 200px;
+		}
+		.settings__navigation--fixed {
+			position: fixed;
+		}
+		.settings__navigation-list {
+			display: flex;
+			flex-direction: column;
+		}
+		.settings__navigation-list .last {
+			order: 99;
+		}
+		.hidden {
+			display: none
+		}
+		.header__heading::after {
+			content: " - Settings"
+		}
+		.header__heading-version {
+			display: none;
+			font-size: 70%;
+			opacity: 0.7;
+		}
+		.settings__navigation:before {
+			background-image: url(lib/i/cog-02.svg);
+			background-repeat: no-repeat;
+			background-size: 100%;
+			content : " ";
+			display: block;
+			height: 100px;
+			margin: 10px auto 0 auto ;
+			width: 100px;
+		}
+	</style>
+	<!-- see http://codepo8.github.com/css-fork-on-github-ribbon/ -->
+	<style>#forkongithub a{background:#005;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#060;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style>
+</head>
+	<body>
+		<div class="settings">
+			<header class="header">
+				<h1 class="header__heading"></h1>
+				<p>
+					Use the form below to enable/disable features
+				</p>
+			</header>
+			<nav class="settings__navigation settings__navigation--fixed">
+				<ul class="settings__navigation-list">
+					<li class="last settings__navigation-item"><a class="settings__navigation-link" href="#sectionAbout">About</a></li>
+				</ul>
+			</nav>
+			<main class="main">
+				<section id="sectionAbout" class="settings__section">
+					<div>
+						<h2>About</h2>
+						<p><strong class="appName"></strong></p>
+						<p>version: <strong class="appVersion"></strong></p>
+						<h3>Getting started</h3>
+						<p>This extension displays a queue of STASH pull requests you have been named in.</p>
+						<h4>Setup</h4>
+						<p>
+							To display STASH requests, the first thing you need to do
+							is login to your STASH instance and add your STASH URL
+							to the options.
+						</p>
+						<p>
+							Once you have entered your STASH URL,
+							check the popup display is working.
+						</p>
+						<p>
+							To keep a track of pull requests you initiated change the
+							query string param in the "Stash rest" item.
+						</p>
+						<h4>Reset settings</h4>
+						<p>
+							Items with a default value can be reset by double clicking on
+							the element.
+						</p>
+						<p>
+							To reset all the setting back to the default setting, click on the
+							"Reset default options" button.
+						</p>
+					</div>
+				</section>
+
+				<form class="settings__form">
+
+
+				</form>
+			</main>
+		</div>
+	</body>
+</html>
