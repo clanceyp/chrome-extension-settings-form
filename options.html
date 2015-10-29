@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="ctl00_HtmlElement" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html lang="en">
 <head>
 	<script src="lib/js/vendor/zepto.js"></script>
 	<script src="lib/js/vendor/knockout.js"></script>
@@ -18,15 +18,25 @@
 		}
 		.settings__form-label--checkbox {
 			display: inline-block;
-			padding-left: 4px;
+			padding-right: 4px;
+		}
+		.settings__form-label--radio {
+			padding-top: 2px;
 		}
 		.settings__form-label--range:after {
-			content: " " attr(data-value) attr(data-suffix)
+			content: " " attr(data-value) attr(data-suffix);
+			opacity: .7;
 		}
 		.settings__form-row {
 			border-bottom: 1px dashed #ccc;
 			margin-bottom: 8px;
 			padding-bottom: 8px;
+			position: relative;
+		}
+		.settings__form-item--radio {
+			margin: 0 6px 2px 2px;
+			position: relative;
+			top: -1px;
 		}
 
 		.settings {
@@ -48,6 +58,29 @@
 		.settings__navigation-list .last {
 			order: 99;
 		}
+		.settings__navigation-item {
+			list-style: none;
+		}
+		.settings__navigation-item.selected:not(:hover) {
+			border-right: 6px solid #888;
+		}
+		.settings__navigation-link {
+			display: block;
+			padding: 4px 12px;
+			text-decoration: none;
+		}
+		.settings__navigation-link:hover {
+			background-color: #eee;
+			border-right: 6px solid #ccc;
+			text-decoration: underline;
+		}
+		.settings__navigation-list {
+			margin: 20px 0 0 0;
+			padding: 0;
+		}
+
+
+
 		.hidden {
 			display: none
 		}
