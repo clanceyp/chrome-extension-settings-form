@@ -1,108 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="lib/js/vendor/zepto.js"></script>
-	<script src="lib/js/vendor/knockout.js"></script>
-	<script src="lib/js/vendor/knockout.reactor.js"></script>
-	<script src="lib/js/vendor/underscore.js"></script>
-	<script src="lib/js/settings-manifest.js"></script>
-	<script src="lib/js/options.js"></script>
-	<link rel="stylesheet" href="lib/css/help.css"/>
+	<script src="/lib/options/js/vendor/zepto.js"></script>
+	<script src="/lib/options/js/vendor/knockout.js"></script>
+	<script src="/lib/options/js/vendor/knockout.reactor.js"></script>
+	<script src="/lib/options/js/vendor/underscore.js"></script>
+	<script src="/lib/options/js/manifest.js"></script>
+	<script src="/lib/options/js/options.js"></script>
+	<link rel="stylesheet" href="/lib/options/css/help.css"/>
+	<link rel="stylesheet" href="/lib/options/css/options.css"/>
 
 	<title>Extension options</title>
 
-	<style>
-		.settings__form-label {
-			display: block;
-			padding-bottom: 4px;
-		}
-		.settings__form-label--checkbox {
-			display: inline-block;
-			padding-right: 4px;
-		}
-		.settings__form-label--radio {
-			padding-top: 2px;
-		}
-		.settings__form-label--range:after {
-			content: " " attr(data-value) attr(data-suffix);
-			opacity: .7;
-		}
-		.settings__form-row {
-			border-bottom: 1px dashed #ccc;
-			margin-bottom: 8px;
-			padding-bottom: 8px;
-			position: relative;
-		}
-		.settings__form-item--radio {
-			margin: 0 6px 2px 2px;
-			position: relative;
-			top: -1px;
-		}
-
-		.settings {
-			margin-left: 200px;
-		}
-		.settings__navigation {
-			left: 0;
-			position: absolute;
-			top: 0;
-			width: 200px;
-		}
-		.settings__navigation--fixed {
-			position: fixed;
-		}
-		.settings__navigation-list {
-			display: flex;
-			flex-direction: column;
-		}
-		.settings__navigation-list .last {
-			order: 99;
-		}
-		.settings__navigation-item {
-			list-style: none;
-		}
-		.settings__navigation-item.selected:not(:hover) {
-			border-right: 6px solid #888;
-		}
-		.settings__navigation-link {
-			display: block;
-			padding: 4px 12px;
-			text-decoration: none;
-		}
-		.settings__navigation-link:hover {
-			background-color: #eee;
-			border-right: 6px solid #ccc;
-			text-decoration: underline;
-		}
-		.settings__navigation-list {
-			margin: 20px 0 0 0;
-			padding: 0;
-		}
-
-
-
-		.hidden {
-			display: none
-		}
-		.header__heading::after {
-			content: " - Settings"
-		}
-		.header__heading-version {
-			display: none;
-			font-size: 70%;
-			opacity: 0.7;
-		}
-		.settings__navigation:before {
-			background-image: url(lib/i/cog-02.svg);
-			background-repeat: no-repeat;
-			background-size: 100%;
-			content : " ";
-			display: block;
-			height: 100px;
-			margin: 10px auto 0 auto ;
-			width: 100px;
-		}
-	</style>
 	<!-- see http://codepo8.github.com/css-fork-on-github-ribbon/ -->
 	<style>#forkongithub a{background:#005;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#060;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style>
 </head>
@@ -120,8 +29,12 @@
 				</ul>
 			</nav>
 			<main class="main">
-				<section id="sectionAbout" class="settings__section">
+
+				<form class="settings__form">
+				<fieldset id="sectionAbout" class="settings__section relative">
+					<span id="forkongithub"><a href="https://github.com/codepo8/css-fork-on-github-ribbon">Fork me on GitHub</a></span>
 					<div>
+
 						<h2>About</h2>
 						<p><strong class="appName"></strong></p>
 						<p>version: <strong class="appVersion"></strong></p>
@@ -150,10 +63,10 @@
 							To reset all the setting back to the default setting, click on the
 							"Reset default options" button.
 						</p>
+						<p><input type="reset" value="Reset default options" /> </p>
 					</div>
-				</section>
+				</fieldset>
 
-				<form class="settings__form">
 
 
 				</form>

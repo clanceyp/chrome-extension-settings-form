@@ -1,25 +1,24 @@
 {
-	"name": "Setting Form"
+	"name": "Options Form"
 	,"short_name": "set-f"
-	,"version": "0.0.1"
+	,"version": "0.0.3"
 	,"manifest_version": 2
-	,"description": "Basic setting form boilter plate"
+	,"description": "Basic options form boiler plate"
 	,"icons": {
-		"32": "lib/i/cog-01.svg"
-		,"48": "lib/i/cog-01.svg"
-		,"128": "lib/i/cog-01.svg"
+		"32": "lib/options/i/cog-01.svg"
+		,"48": "lib/options/i/cog.png"
+		,"128": "lib/options/i/cog.png"
 	}
 	,"background":{
 		"scripts": [
-			"lib/js/settings-manifest.js"
-			,"lib/js/vendor/underscore.js"
-			,"lib/js/vendor/zepto.js"
-			,"lib/js/vendor/can.js"
-			,"lib/js/background.js"
+			"lib/options/js/manifest.js"
+			,"lib/options/js/vendor/underscore.js"
+			,"lib/options/js/vendor/zepto.js"
+			,"lib/options/js/background.js"
 		]
 	}
 	,"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
-	,"options_page": "options.html"
+	,"options_page": "lib/options/index.html"
 	,"permissions": [
 		"tabs"
 		,"http://*/*"
