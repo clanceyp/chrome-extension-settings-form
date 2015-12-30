@@ -30,6 +30,9 @@ h2, .settings__form-label {
     padding-bottom: 8px;
     position: relative;
 }
+.settings__form-row:last-child {
+    border-bottom: 0 none;
+}
 .settings__form-item--radio {
     margin: 0 6px 2px 2px;
     position: relative;
@@ -110,4 +113,10 @@ h2, .settings__form-label {
 }
 table.data th {
     text-align: left;
+}
+
+.inverse {
+    background-color: #333;
+    border: 3px solid #333;
+    color : #fff;
 }
