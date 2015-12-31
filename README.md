@@ -49,9 +49,9 @@ Add "fieldset" elements to create sections (sections get automatically added to 
     // label : [used as the label text]
     // type : [form element type, if using HTML5 set this to "text"]
     // html5 : [form element type e.g. 'date', 'color', 'number' etc... ]
-    // parent : [parent element id]
+    // parent : [parent element id, which section to add form element to, defaults to defaultSection]
     // attr : [array, adds attributes to form element]
-    // data : [array, adds data attributes to for element]
+    // data : [array, adds data attributes to form element]
 ```
 
 ## Accessing options in your chrome extension
