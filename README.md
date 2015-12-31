@@ -39,10 +39,9 @@ Add "fieldset" elements to create sections (sections get automatically added to 
 	// 		id : mandatory (must be unique)
 	// 		defaultSection : optional, 	should be set to true on the default fieldset 
 	//									flags which section is visible when the options page loads, 
-										only one section can be the defaultSection
+	//									only one section can be the defaultSection
 										
 	// basic form element example	
-	...
 	{"name":"", "label":"", "type":"text", parent:'basicSettings', attr: [], data: []},
     ...
     // name : mandatory 
