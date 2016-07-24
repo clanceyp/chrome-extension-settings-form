@@ -101,8 +101,12 @@ h2, .settings__form-label {
     font-size: 70%;
     opacity: 0.7;
 }
+.settings__navigation {
+    background-image: url(../i/cog-02.svg);
+    background-size:0;
+}
 .settings__navigation:before {
-    background-image: url(/lib/options/i/cog-02.svg);
+    background-image: inherit;
     background-repeat: no-repeat;
     background-size: 100%;
     content : " ";
@@ -111,12 +115,58 @@ h2, .settings__form-label {
     margin: 10px auto 0 auto ;
     width: 100px;
 }
+table.data {
+    width: 100%
+}
+table.data td:nth-child(-n+2){
+    padding-right: 12px;
+}
+table.data td:nth-child(3){
+
+}
 table.data th {
     text-align: left;
 }
-
+table.data input[type=text]{
+    width: 99%;
+}
 .inverse {
     background-color: #333;
     border: 3px solid #333;
     color : #fff;
+}
+
+@media (max-width: 600px) {
+    .settings__navigation:before {
+        display: none;
+    }
+    .settings {
+        margin-left: 20px;
+    }
+    .settings__navigation--fixed {
+        position: static;
+    }
+    .settings__navigation-item {
+        background-color: white;
+        border-right: 6px solid white;
+    }
+    .settings__navigation-link:hover {
+        border-right: 0 solid #ccc;
+    }
+    .settings__navigation-item.last {
+        border-radius: 0 5px 5px 0;
+    }
+    .settings__navigation-item:nth-child(2) {
+        border-radius: 5px 0 0 5px ;
+    }
+    .settings__navigation-list {
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+    .settings__navigation {
+        width: auto
+    }
+}
+pre {
+    tab-size: 2;
 }
