@@ -5,16 +5,16 @@
 .help__content {
     background-color: #eee;
     border:1px solid rgba(83,103,141,1);
-    border-radius: 8px 0 0 0;
+    border-radius: 8px 0 8px 8px;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
     display: inline-block;
     left:auto;
-    max-width:280px;
-    min-width:220px;
+    max-width:700px;
+    min-width:300px;
     opacity: 0;
     padding:8px;
     position: absolute;
-    right: 20px;
+    right: 25px;
     text-align: left;
     top: 0px;
     z-index: 1;
@@ -24,6 +24,10 @@
     -webkit-transition-timing-function: linear;
     -webkit-transform :scale(0.5);
     -webkit-transform-origin: 100% 0;
+}
+.help__content[data-label]:before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
 }
 
 .help {
