@@ -60,6 +60,8 @@
 	"lib/options/js/background.js"
 ]</code></pre></li>
 							<li>and <code>"options_page": "lib/options/index.html"</code></li>
+                            <li>Also add <code>"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"</code>
+                                this allows KnockoutJS to use <code>eval()</code></li>
 						</ol>
 						<h4>Usage</h4>
 						<p>Once you have added options as above, you are then ready to use the options form</p>
@@ -95,7 +97,7 @@
 				</form>
 			</main>
 		</div>
-		<span id="forkongithub"><a href="https://github.com/clanceyp/chrome-extension-settings-form">Fork me on GitHub</a></span>
+		<span id="forkongithub"><a class="appHomepage_url" href="https://github.com/clanceyp/chrome-extension-settings-form">Fork me on GitHub</a></span>
 	    <div class="hidden">
 			<div class="insert-html-test"><i>I'm an insert</i></div>
 		</div>

@@ -1,9 +1,10 @@
 {
 	"name": "Options Form"
 	,"short_name": "set-f"
-	,"version": "1.1.0"
+	,"version": "1.2.0"
 	,"manifest_version": 2
 	,"description": "Basic options form boiler plate"
+	,"homepage_url": "https://github.com/clanceyp/chrome-extension-settings-form"
 	,"icons": {
 		"32": "lib/options/i/cog-01.svg"
 		,"48": "lib/options/i/cog.png"
