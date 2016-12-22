@@ -31,7 +31,7 @@
 		}
 	</style>
 </head>
-	<body class="body">
+	<body class="appIcon">
 		<div class="settings">
 			<header class="header">
 				<h1 class="header__heading"></h1>
@@ -54,7 +54,23 @@
 						<p><strong class="appName"></strong></p>
 						<p>version: <strong class="appVersion"></strong></p>
 						<h3>Getting started</h3>
-						<p>About your extension...</p>
+						<ol>
+							<li>Copy the lib/options folder to your extension</li>
+							<li>In your extension manifest file, add the following to background script <pre><code>[
+	"lib/options/js/manifest.js",
+	"lib/options/js/vendor/underscore.js",
+	"lib/options/js/vendor/zepto.js",
+	"lib/options/js/background.js"
+]</code></pre></li>
+							<li>and <code>"options_page": "lib/options/index.html"</code></li>
+						</ol>
+						<h4>Usage</h4>
+						<p>Once you have added options as above, you are then ready to use the options form</p>
+						<p>Open the options manifest and amend as necessary</p>
+						<p>In your background page use <code>options.setLocalStore("key", "value");  options.getLocalStore("key"); </code></p>
+						<p>Notes on <code>options.getLocalStore()</code> see <a href="/lib/options/test/jasmine/SpecRunner.html?spec=Background%20options%20API%20Background%20page%20backgroundPage.options.getLocalStore(key%2C%20fallback%2C%20fn)">Jasmine Spec Runner</a>
+							and see <code>lib/options/test/jasmine/spec/OptionsSpec.js</code> for usage examples.
+						</p>
 						<h4>Options form</h4>
 						<p>
 							For more information about the chrome-extension-options-form.
@@ -83,5 +99,8 @@
 			</main>
 		</div>
 		<span id="forkongithub"><a href="https://github.com/clanceyp/chrome-extension-settings-form">Fork me on GitHub</a></span>
+	    <div class="hidden">
+			<div class="insert-html-test"><i>I'm an insert</i></div>
+		</div>
 	</body>
 </html>

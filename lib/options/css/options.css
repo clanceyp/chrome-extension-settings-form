@@ -2,7 +2,7 @@
     --column-width: 200px;
     --hi-light-colour: #333;
 }
-body {
+body.appIcon {
     background-image: url(../i/cog-02.svg);
     background-size:0;
 }
